@@ -13,7 +13,7 @@ function setup() {
   for(let y = 0; y < rows; y++) {
     terrain[y] = []
     for(let x = 0; x < cols; x++) {
-      terrain[y][x] = random(-10, 10)
+      terrain[x][y] = random(-10, 10)
     }
   }
 
@@ -33,9 +33,9 @@ function draw() {
     beginShape(TRIANGLE_STRIP)
     for (let x = 0; x < cols; x++) {
       vertex(x*scale, y*scale, terrain[x][y])
-      vertex(x*scale, (y+1)*scale)
+      vertex(x*scale, (y+1)*scale, terrain[x][y+1])
     }
     endShape()
   }
-  
+
 }
