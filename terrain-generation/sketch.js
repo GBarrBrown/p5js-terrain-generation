@@ -16,8 +16,8 @@ function draw() {
   translate(-(w/2), -(w/2)) // WEBGL makes (0,0) centered. change to top left 
 
 
-  for (let x = 0; x < cols; x++) {
-    for (let y = 0; y < rows; y++) {
+  for (let y = 0; y < rows; y++) {
+    for (let x = 0; x < cols; x++) {
       stroke(255)
       noFill()
       rect(x*scale, y*scale, scale, scale)
