@@ -4,8 +4,8 @@ let scale = 20
 function setup() {
   // put setup code here
   createCanvas(600, 600, WEBGL)
-  w = 600
-  h = 600
+  w = 1000
+  h = 700
   cols = w / scale
   rows = h / scale
   terrain = []
