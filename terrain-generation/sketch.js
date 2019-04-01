@@ -13,9 +13,12 @@ function setup() {
 function draw() {
   // put drawing code here
   background(0)
-  translate(-(w/2), -(w/2)) // WEBGL makes (0,0) centered. change to top left 
+  // translate(-(w/2), -(w/2)) // WEBGL makes (0,0) centered. change to top left 
   stroke(255)
   noFill()
+
+  rotateX(PI/3)
+  translate(-w/2, -h/2)
 
   for (let y = 0; y < rows; y++) {
     beginShape(TRIANGLE_STRIP)
