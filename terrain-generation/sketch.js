@@ -10,11 +10,15 @@ function setup() {
   rows = h / scale
   terrain = []
 
+  let xoff = 0
   for(let x = 0; x < cols; x++) {
     terrain[x] = []
+    let yoff = 0
     for(let y = 0; y < rows; y++) {
-      terrain[x][y] = random(-10, 10)
+      terrain[x][y] = map(noise(xoff,yoff), 0, 1, -20, 20)
+      yoff += 0.4
     }
+    xoff += 0.4
   }
 
 }
