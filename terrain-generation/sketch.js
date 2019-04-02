@@ -29,8 +29,9 @@ function draw() {
   }
 
   background(0)
-  stroke(255)
-  noFill()
+  stroke(130)
+  fill(125,210,25)
+  // noFill()
 
   rotateX(PI/3)
   translate(-w/2, -h/2)
