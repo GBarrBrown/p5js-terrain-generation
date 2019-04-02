@@ -1,5 +1,6 @@
 let cols, rows, w, h, terrain;
 let scale = 20
+let flying = 0
 
 function setup() {
   // put setup code here
@@ -10,10 +11,16 @@ function setup() {
   rows = h / scale
   terrain = []
 
+}
+
+function draw() {
+  // put drawing code here
+  flying -= 0.5
+
   let xoff = 0
   for(let x = 0; x < cols; x++) {
     terrain[x] = []
-    let yoff = 0
+    let yoff = flying
     for(let y = 0; y < rows; y++) {
       terrain[x][y] = map(noise(xoff,yoff), 0, 1, -20, 20)
       yoff += 0.4
@@ -21,17 +28,13 @@ function setup() {
     xoff += 0.4
   }
 
-}
-
-function draw() {
-  // put drawing code here
   background(0)
   stroke(255)
   noFill()
 
   rotateX(PI/3)
   translate(-w/2, -h/2)
-  frameRate(1)
+  frameRate(60)
 
   for (let y = 0; y < rows-1; y++) {
     beginShape(TRIANGLE_STRIP)
