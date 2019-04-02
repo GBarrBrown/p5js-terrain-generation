@@ -5,8 +5,8 @@ let flying = 0
 function setup() {
   // put setup code here
   createCanvas(600, 600, WEBGL)
-  w = 1000
-  h = 700
+  w = 1200
+  h = 1000
   cols = w / scale
   rows = h / scale
   terrain = []
@@ -15,14 +15,14 @@ function setup() {
 
 function draw() {
   // put drawing code here
-  flying -= 0.5
+  flying -= 0.6
 
   let xoff = 0
   for(let x = 0; x < cols; x++) {
     terrain[x] = []
     let yoff = flying
     for(let y = 0; y < rows; y++) {
-      terrain[x][y] = map(noise(xoff,yoff), 0, 1, -20, 20)
+      terrain[x][y] = map(noise(xoff,yoff), 0, 1, -20, 40)
       yoff += 0.4
     }
     xoff += 0.4
