@@ -28,7 +28,7 @@ function draw() {
     xoff += 0.4
   }
 
-  background(0)
+  background(25, 190, 210)
   stroke(130)
   fill(125,210,25)
   // noFill()
